@@ -1,0 +1,51 @@
+unique_name: customer
+object_type: dataset
+label: customer
+connection_id: db sql
+sql: "select \n\t* \nfrom \n(\nselect \n  *,\n  mask(C_EMAIL_ADDRESS) emailmasked,\n\
+  \  mask(C_CUSTOMER_ID) c_customer_id_masked, \n  hive_metastore.tpcds10t.udf_mask_email(C_EMAIL_ADDRESS)\
+  \ emailmasked2\nfrom hive_metastore.tpcds_10tb.customer\n)"
+
+columns:
+  - name: C_BIRTH_COUNTRY
+    data_type: string
+  - name: C_BIRTH_DAY
+    data_type: int
+  - name: C_BIRTH_MONTH
+    data_type: int
+  - name: C_BIRTH_YEAR
+    data_type: int
+  - name: C_CURRENT_ADDR_SK
+    data_type: int
+  - name: C_CURRENT_CDEMO_SK
+    data_type: int
+  - name: C_CURRENT_HDEMO_SK
+    data_type: int
+  - name: C_CUSTOMER_ID
+    data_type: string
+  - name: C_CUSTOMER_SK
+    data_type: int
+  - name: C_EMAIL_ADDRESS
+    data_type: string
+  - name: C_FIRST_NAME
+    data_type: string
+  - name: C_FIRST_SALES_DATE_SK
+    data_type: int
+  - name: C_FIRST_SHIPTO_DATE_SK
+    data_type: int
+  - name: C_LAST_NAME
+    data_type: string
+  - name: C_LAST_REVIEW_DATE
+    data_type: string
+  - name: C_LOGIN
+    data_type: string
+  - name: C_PREFERRED_CUST_FLAG
+    data_type: string
+  - name: C_SALUTATION
+    data_type: string
+  - name: c_customer_id_masked
+    data_type: string
+  - name: emailmasked
+    data_type: string
+  - name: emailmasked2
+    data_type: string

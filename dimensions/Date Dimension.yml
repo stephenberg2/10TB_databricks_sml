@@ -1,0 +1,131 @@
+unique_name: Date Dimension
+object_type: dimension
+label: Date Dimension
+type: time
+
+hierarchies:
+
+  - unique_name: Date Dimension
+    label: Date Month Hierarchy
+    folder: Date Attributes
+    filter_empty: "yes"
+
+    levels:
+
+      - unique_name: Calendar Year
+        time_unit: year
+
+      - unique_name: Calendar Quarter
+        time_unit: quarter
+
+      - unique_name: Month
+        time_unit: month
+
+      - unique_name: Time Dimension
+        time_unit: day
+
+level_attributes:
+
+  - unique_name: Calendar Quarter
+    label: Calendar Quarter
+    dataset: date_dim
+    name_column: D_QUARTER_NAME
+    key_columns:
+      - D_QOY
+      - D_YEAR
+    sort_column: D_QOY
+    allowed_calcs_for_dma:
+      - Ancestor
+      - Descendants
+      - Lag
+      - ParallelPeriod
+      - PeriodsToDate
+      - Range
+      - Siblings
+
+  - unique_name: Calendar Year
+    label: Calendar Year
+    dataset: date_dim
+    name_column: D_YEAR
+    key_columns:
+      - D_YEAR
+    sort_column: D_YEAR
+    allowed_calcs_for_dma:
+      - Ancestor
+      - Descendants
+      - Lag
+      - ParallelPeriod
+      - PeriodsToDate
+      - Range
+      - Siblings
+
+  - unique_name: Month
+    label: Month
+    dataset: date_dim
+    name_column: D_MOY
+    key_columns:
+      - D_MOY
+      - D_QOY
+      - D_YEAR
+    sort_column: D_MOY
+    allowed_calcs_for_dma:
+      - Ancestor
+      - Descendants
+      - Lag
+      - ParallelPeriod
+      - PeriodsToDate
+      - Range
+      - Siblings
+
+  - unique_name: Time Dimension
+    label: Date
+    format: Short Date
+    is_unique_key: true
+    dataset: date_dim
+    name_column: d_datetime
+    key_columns:
+      - D_DATE_SK
+    sort_column: d_datetime
+    allowed_calcs_for_dma:
+      - Ancestor
+      - Descendants
+      - Lag
+      - ParallelPeriod
+      - PeriodsToDate
+      - Range
+      - Siblings
+
+calculation_groups:
+
+  - unique_name: Time Calculation Group Example
+    label: Time Calculation Group Example
+    folder: Date Attributes
+
+    calculated_members:
+
+      - unique_name: Month to Date
+        expression: "Aggregate(PeriodsToDate([Date Dimension].[Date Dimension].[Calendar\
+          \ Month], [Date Dimension].[Date Dimension].CurrentMember),[Measures].currentMember)"
+        format: Standard
+        hierarchy: Date Dimension
+        template: Month to Date
+
+      - unique_name: Last Year
+        expression: "(ParallelPeriod([Date Dimension].[Date Dimension].[Calendar Year],\
+          \ 1, [Date Dimension].[Date Dimension].CurrentMember), [Measures].currentMember)"
+        format: Standard
+        hierarchy: Date Dimension
+        template: Last Year
+
+      - unique_name: Current Year
+        description: The measure's value for the current dimension members in the
+          query.
+        expression: "([Date Dimension].[Date Dimension].CurrentMember, [Measures].currentMember)"
+        format: Standard
+        hierarchy: Date Dimension
+        template: Current
+        is_default: true
+
+modeler_metadata:
+  version: 0
+  modified: "false"

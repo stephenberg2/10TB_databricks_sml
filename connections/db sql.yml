@@ -1,0 +1,6 @@
+unique_name: db sql
+label: db sql
+object_type: connection
+as_connection: db sql
+database: hive_metastore
+schema: tpcds_10tb
