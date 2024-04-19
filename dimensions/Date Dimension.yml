@@ -18,10 +18,10 @@ hierarchies:
       - unique_name: Calendar Quarter
         time_unit: quarter
 
-      - unique_name: Month
+      - unique_name: Calendar Month
         time_unit: month
 
-      - unique_name: Time Dimension
+      - unique_name: Calendar Date
         time_unit: day
 
 level_attributes:
@@ -59,8 +59,8 @@ level_attributes:
       - Range
       - Siblings
 
-  - unique_name: Month
-    label: Month
+  - unique_name: Calendar Month
+    label: Calendar Month
     dataset: date_dim
     name_column: D_MOY
     key_columns:
@@ -77,8 +77,8 @@ level_attributes:
       - Range
       - Siblings
 
-  - unique_name: Time Dimension
-    label: Date
+  - unique_name: Calendar Date
+    label: Calendar Date
     format: Short Date
     is_unique_key: true
     dataset: date_dim
@@ -95,36 +95,7 @@ level_attributes:
       - Range
       - Siblings
 
-calculation_groups:
 
-  - unique_name: Time Calculation Group Example
-    label: Time Calculation Group Example
-    folder: Date Attributes
-
-    calculated_members:
-
-      - unique_name: Month to Date
-        expression: "Aggregate(PeriodsToDate([Date Dimension].[Date Dimension].[Calendar\
-          \ Month], [Date Dimension].[Date Dimension].CurrentMember),[Measures].currentMember)"
-        format: Standard
-        hierarchy: Date Dimension
-        template: Month to Date
-
-      - unique_name: Last Year
-        expression: "(ParallelPeriod([Date Dimension].[Date Dimension].[Calendar Year],\
-          \ 1, [Date Dimension].[Date Dimension].CurrentMember), [Measures].currentMember)"
-        format: Standard
-        hierarchy: Date Dimension
-        template: Last Year
-
-      - unique_name: Current Year
-        description: The measure's value for the current dimension members in the
-          query.
-        expression: "([Date Dimension].[Date Dimension].CurrentMember, [Measures].currentMember)"
-        format: Standard
-        hierarchy: Date Dimension
-        template: Current
-        is_default: true
 
 modeler_metadata:
   version: 0
