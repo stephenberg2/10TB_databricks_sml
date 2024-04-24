@@ -41,7 +41,6 @@ aggregates:
       - Purchased Amount On Web
       - Web Ext Discount Amount
       - Web Net Paid Incl Tax
-      - Web Sales_2
       - Web Net Paid Incl Ship
       - Web Net Paid Incl Tax and Ship
     target_connection: db sql
@@ -94,8 +93,6 @@ metrics:
   - unique_name: Web Sales Net Paid
     folder: Web Sales Measures
   - unique_name: Web Sales Row Counter
-    folder: Web Sales Measures
-  - unique_name: Web Sales_2
     folder: Web Sales Measures
   - unique_name: Average Web Unit Net Profit
     folder: Web Sales Measures
