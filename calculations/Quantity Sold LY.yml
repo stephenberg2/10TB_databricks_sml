@@ -1,7 +1,10 @@
 unique_name: Quantity Sold LY
 object_type: metric_calc
 label: Quantity Sold LY
-expression: "(ParallelPeriod([Sold Date Dimension].[Sold Date Dimension].[Sold Calendar\
-  \ Year],1,[Sold Date Dimension].[Sold Date Dimension].CurrentMember),[Measures].[Store\
-  \ Quantity Sold])"
+expression: >-
+  (ParallelPeriod([Sold Date Dimension].[Sold Date Dimension].[Sold Calendar Year]
+  , 1
+  , [Sold Date Dimension].[Sold Date Dimension].CurrentMember)
+  , [Measures].[Store Quantity Sold])
 format: General Number
+is_hidden: false
