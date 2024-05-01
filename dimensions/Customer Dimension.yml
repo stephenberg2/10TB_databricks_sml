@@ -1,151 +1,127 @@
 unique_name: Customer Dimension
 object_type: dimension
 label: Customer Dimension
-type: standard
-
 hierarchies:
-
   - unique_name: Customer Dimension
     label: Customer Dimension
+    filter_empty: 'yes'
     folder: Customer Information
-    filter_empty: "yes"
-
     levels:
-
       - unique_name: Customer Country
-
       - unique_name: Customer State
-
       - unique_name: Customer County
-
       - unique_name: Customer City
-
       - unique_name: Customer Number
-
         secondary_attributes:
-
           - unique_name: Customer Email
             label: 'Customer Email '
-            folder: Customer Information
-            dataset: customer
-            name_column: C_EMAIL_ADDRESS
-            key_columns:
-              - C_EMAIL_ADDRESS
-            sort_column: C_EMAIL_ADDRESS
             allowed_calcs_for_dma:
               - Lag
-              - Range
               - Siblings
-
+              - Range
+            dataset: customer qds
+            folder: Customer Information
+            key_columns:
+              - C_EMAIL_ADDRESS
+            name_column: C_EMAIL_ADDRESS
+            sort_column: C_EMAIL_ADDRESS
   - unique_name: Customer Dimension No PII
     label: Customer Dimension No PII
+    filter_empty: 'yes'
     folder: Customer Information
-    filter_empty: "yes"
-
     levels:
-
       - unique_name: Customer Country
-
       - unique_name: Customer State
-
       - unique_name: Customer County
-
       - unique_name: Customer City
-
       - unique_name: Customer ID Masked
-
         secondary_attributes:
-
           - unique_name: Customer Email Masked 2
             label: Customer Email Masked 2
-            folder: Customer Information
-            dataset: customer
-            name_column: emailmasked2
-            key_columns:
-              - C_EMAIL_ADDRESS
-            sort_column: emailmasked2
             allowed_calcs_for_dma:
               - Lag
-              - Range
               - Siblings
-
+              - Range
+            dataset: customer qds
+            folder: Customer Information
+            key_columns:
+              - C_EMAIL_ADDRESS
+            name_column: emailmasked2
+            sort_column: emailmasked2
           - unique_name: Customer Email Masked
             label: Customer Email Masked
-            folder: Customer Information
-            dataset: customer
-            name_column: emailmasked
-            key_columns:
-              - C_EMAIL_ADDRESS
-            sort_column: emailmasked
             allowed_calcs_for_dma:
               - Lag
-              - Range
               - Siblings
-
+              - Range
+            dataset: customer qds
+            folder: Customer Information
+            key_columns:
+              - C_EMAIL_ADDRESS
+            name_column: emailmasked
+            sort_column: emailmasked
 level_attributes:
-
   - unique_name: Customer City
     label: Customer City
     dataset: customer_address
-    name_column: CA_CITY
     key_columns:
       - CA_ADDRESS_ID
-
+    name_column: CA_CITY
+    sort_column: empty_value
   - unique_name: Customer Country
     label: Customer Country
     dataset: customer_address
-    name_column: CA_COUNTRY
     key_columns:
       - CA_COUNTRY
-
+    name_column: CA_COUNTRY
+    sort_column: empty_value
   - unique_name: Customer County
     label: Customer County
     dataset: customer_address
-    name_column: CA_COUNTY
     key_columns:
       - CA_COUNTY
       - CA_COUNTRY
       - CA_STATE
-
+    name_column: CA_COUNTY
+    sort_column: empty_value
   - unique_name: Customer ID Masked
     label: Customer ID Masked
-    dataset: customer
-    name_column: c_customer_id_masked
-    key_columns:
-      - C_CUSTOMER_SK
     allowed_calcs_for_dma:
-      - Ancestor
-      - Descendants
       - Lag
       - ParallelPeriod
-      - Range
+      - Ancestor
+      - Descendants
       - Siblings
-
-  - unique_name: Customer Number
-    label: Customer Number
-    dataset: customer
-    name_column: C_CUSTOMER_SK
+      - Range
+    dataset: customer qds
     key_columns:
       - C_CUSTOMER_SK
-
+    name_column: c_customer_id_masked
+    sort_column: empty_value
+  - unique_name: Customer Number
+    label: Customer Number
+    dataset: customer qds
+    key_columns:
+      - C_CUSTOMER_SK
+    name_column: C_CUSTOMER_SK
+    sort_column: empty_value
   - unique_name: Customer State
     label: Customer State
     dataset: customer_address
-    name_column: CA_STATE
     key_columns:
       - CA_STATE
       - CA_COUNTRY
-
+    name_column: CA_STATE
+    sort_column: empty_value
+modeler_metadata:
+  modified: 'false'
+  version: 0
 relationships:
-
   - from:
-      dataset: customer
+      dataset: customer qds
       join_columns:
         - C_CUSTOMER_ID
     to:
       level: Customer City
     type: snowflake
-
-modeler_metadata:
-  version: 0
-  modified: "false"
+type: standard

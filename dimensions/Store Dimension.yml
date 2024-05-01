@@ -1,96 +1,83 @@
 unique_name: Store Dimension
 object_type: dimension
 label: Store Dimension
-type: standard
-
 hierarchies:
-
   - unique_name: Store Dimension
     label: Store Dimension
+    filter_empty: 'yes'
     folder: Store Attributes
-    filter_empty: "yes"
-
     levels:
-
       - unique_name: d_store_country
-
       - unique_name: d_store_state
-
       - unique_name: d_store_county
-
       - unique_name: d_store_city
-
       - unique_name: Store Dimension
-
         secondary_attributes:
-
           - unique_name: d_s_floor_space
             label: Store Floor Space
-            folder: Store Attributes
             dataset: store
-            name_column: S_FLOOR_SPACE
+            folder: Store Attributes
             key_columns:
               - S_FLOOR_SPACE
+            name_column: S_FLOOR_SPACE
             sort_column: S_FLOOR_SPACE
-
           - unique_name: d_s_number_employees
             label: Store Number of Employees
-            folder: Store Attributes
             dataset: store
-            name_column: S_NUMBER_EMPLOYEES
+            folder: Store Attributes
             key_columns:
               - S_NUMBER_EMPLOYEES
+            name_column: S_NUMBER_EMPLOYEES
             sort_column: S_NUMBER_EMPLOYEES
-
           - unique_name: d_store_name
             label: Store Name
-            folder: Store Attributes
             dataset: store
-            name_column: S_STORE_NAME
+            folder: Store Attributes
             key_columns:
               - S_STORE_NAME
+            name_column: S_STORE_NAME
             sort_column: S_STORE_NAME
-
 level_attributes:
-
   - unique_name: d_store_city
     label: Store City
     dataset: store
-    name_column: S_CITY
     key_columns:
       - S_COUNTRY
       - S_STATE
       - S_CITY
       - S_COUNTY
-
+    name_column: S_CITY
+    sort_column: empty_value
   - unique_name: d_store_country
     label: Store Country
     dataset: store
-    name_column: S_COUNTRY
     key_columns:
       - S_COUNTRY
-
+    name_column: S_COUNTRY
+    sort_column: empty_value
   - unique_name: d_store_county
     label: Store County
     dataset: store
-    name_column: S_COUNTY
     key_columns:
       - S_STATE
       - S_COUNTY
       - S_COUNTRY
-
+    name_column: S_COUNTY
+    sort_column: empty_value
   - unique_name: d_store_state
     label: Store State
     dataset: store
-    name_column: S_STATE
     key_columns:
       - S_COUNTRY
       - S_STATE
-
+    name_column: S_STATE
+    sort_column: empty_value
   - unique_name: Store Dimension
     label: Store Number
-    is_unique_key: true
     dataset: store
-    name_column: S_STORE_SK
+    is_unique_key: true
     key_columns:
       - S_STORE_SK
+    name_column: S_STORE_SK
+    sort_column: empty_value
+type: standard

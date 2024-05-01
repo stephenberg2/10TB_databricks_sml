@@ -100,7 +100,7 @@ relationships:
       join_columns:
         - WS_PROMO_SK
     to:
-      dimension: Promotions
+      dimension: Promotions Dim
       level: Promotions
   - unique_name: web_sales_Customer_Demographics
     from:
@@ -148,7 +148,7 @@ relationships:
       join_columns:
         - SS_PROMO_SK
     to:
-      dimension: Promotions
+      dimension: Promotions Dim
       level: Promotions
   - unique_name: store_sales_Store_Dimension
     from:

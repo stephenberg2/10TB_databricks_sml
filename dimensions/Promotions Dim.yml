@@ -1,89 +1,76 @@
-unique_name: Promotions
+unique_name: Promotions Dim
 object_type: dimension
-label: Promotions
-type: standard
-
+label: Promotions Dim
 hierarchies:
-
   - unique_name: Promotions
     label: Promotions
+    filter_empty: 'yes'
     folder: Promotion Attributes
-    filter_empty: "yes"
-
     levels:
-
       - unique_name: Promo Active Indicator
-
       - unique_name: Promotions
-
         secondary_attributes:
-
           - unique_name: d_channel_catalog
             label: Channel Catalog
+            dataset: promotion
             folder: Promotion Attributes
-            dataset: PROMOTION
-            name_column: P_CHANNEL_CATALOG
             key_columns:
               - P_CHANNEL_CATALOG
+            name_column: P_CHANNEL_CATALOG
             sort_column: P_CHANNEL_CATALOG
-
           - unique_name: d_channel_direct_mail
             label: Channel Direct Mail
+            dataset: promotion
             folder: Promotion Attributes
-            dataset: PROMOTION
-            name_column: P_CHANNEL_DMAIL
             key_columns:
               - P_CHANNEL_DMAIL
+            name_column: P_CHANNEL_DMAIL
             sort_column: P_CHANNEL_DMAIL
-
           - unique_name: d_channel_email
             label: Channel Email
+            dataset: promotion
             folder: Promotion Attributes
-            dataset: PROMOTION
-            name_column: P_CHANNEL_EMAIL
             key_columns:
               - P_CHANNEL_EMAIL
+            name_column: P_CHANNEL_EMAIL
             sort_column: P_CHANNEL_EMAIL
-
           - unique_name: d_channel_event
             label: Channel Event
+            dataset: promotion
             folder: Promotion Attributes
-            dataset: PROMOTION
-            name_column: P_CHANNEL_EVENT
             key_columns:
               - P_CHANNEL_EVENT
+            name_column: P_CHANNEL_EVENT
             sort_column: P_CHANNEL_EVENT
-
           - unique_name: d_channel_tv
             label: Channel TV
+            dataset: promotion
             folder: Promotion Attributes
-            dataset: PROMOTION
-            name_column: P_CHANNEL_TV
             key_columns:
               - P_CHANNEL_TV
+            name_column: P_CHANNEL_TV
             sort_column: P_CHANNEL_TV
-
           - unique_name: d_promo_name
             label: Promotion Name
+            dataset: promotion
             folder: Promotion Attributes
-            dataset: PROMOTION
-            name_column: P_PROMO_NAME
             key_columns:
               - P_PROMO_NAME
+            name_column: P_PROMO_NAME
             sort_column: P_PROMO_NAME
-
 level_attributes:
-
   - unique_name: Promo Active Indicator
     label: Promo Active Indicator
-    dataset: PROMOTION
-    name_column: P_DISCOUNT_ACTIVE
+    dataset: promotion
     key_columns:
       - P_DISCOUNT_ACTIVE
-
+    name_column: P_DISCOUNT_ACTIVE
+    sort_column: empty_value
   - unique_name: Promotions
     label: Promotion SK
-    dataset: PROMOTION
-    name_column: P_PROMO_SK
+    dataset: promotion
     key_columns:
       - P_PROMO_SK
+    name_column: P_PROMO_SK
+    sort_column: empty_value
+type: standard

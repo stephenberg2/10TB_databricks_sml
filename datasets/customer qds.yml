@@ -1,11 +1,6 @@
-unique_name: customer
+unique_name: customer qds
 object_type: dataset
-label: customer
-connection_id: db sql
-sql: "select \n\t* \nfrom \n(\nselect \n  *,\n  mask(C_EMAIL_ADDRESS) emailmasked,\n\
-  \  mask(C_CUSTOMER_ID) c_customer_id_masked, \n  hive_metastore.tpcds10t.udf_mask_email(C_EMAIL_ADDRESS)\
-  \ emailmasked2\nfrom hive_metastore.tpcds_10tb.customer\n)"
-
+label: customer qds
 columns:
   - name: C_BIRTH_COUNTRY
     data_type: string
@@ -49,3 +44,5 @@ columns:
     data_type: string
   - name: emailmasked2
     data_type: string
+connection_id: db sql
+sql: "select \n\t* \nfrom \n(\nselect \n  *,\n  mask(C_EMAIL_ADDRESS) emailmasked,\n  mask(C_CUSTOMER_ID) c_customer_id_masked, \n  hive_metastore.tpcds10t.udf_mask_email(C_EMAIL_ADDRESS) emailmasked2\nfrom hive_metastore.tpcds_10tb.customer\n)"
