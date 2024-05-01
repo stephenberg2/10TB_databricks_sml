@@ -1,12 +1,6 @@
 unique_name: date_dim
 object_type: dataset
 label: date_dim
-connection_id: db sql
-sql: "select \n*,\nto_timestamp(d_date) as d_datetime,\ncast(d_date as string) as\
-  \ d_datestring,\nCAST(CONCAT(SUBSTRING(CAST(D_DATE AS string),1,4), '-', SUBSTRING(CAST(D_DATE\
-  \ AS string),6,2),'-01') AS DATE) as year_month\nfrom hive_metastore.tpcds_10tb.date_dim\n\
-  where d_date > '1998-01-01'"
-
 columns:
   - name: D_CURRENT_DAY
     data_type: string
@@ -70,3 +64,19 @@ columns:
     data_type: datetime
   - name: year_month
     data_type: date
+connection_id: db sql
+sql: >-
+  select 
+
+  *,
+
+  to_timestamp(d_date) as d_datetime,
+
+  cast(d_date as string) as d_datestring,
+
+  CAST(CONCAT(SUBSTRING(CAST(D_DATE AS string),1,4), '-', SUBSTRING(CAST(D_DATE
+  AS string),6,2),'-01') AS DATE) as year_month
+
+  from hive_metastore.tpcds_10tb.date_dim
+
+  where d_date > '1998-01-01'
