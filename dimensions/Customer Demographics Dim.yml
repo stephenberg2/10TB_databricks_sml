@@ -1,6 +1,6 @@
-unique_name: Customer Demographics
+unique_name: Customer Demographics Dim
 object_type: dimension
-label: Customer Demographics
+label: Customer Demographics Dim
 hierarchies:
   - unique_name: Customer Demographics
     label: Customer Demographics

@@ -76,7 +76,7 @@ relationships:
       join_columns:
         - WS_BILL_CUSTOMER_SK
     to:
-      dimension: Customer Dimension
+      dimension: Customer Dim
       level: Customer ID Masked
   - unique_name: web_sales_Ship_Mode
     from:
@@ -84,7 +84,7 @@ relationships:
       join_columns:
         - WS_SHIP_MODE_SK
     to:
-      dimension: Ship Mode
+      dimension: Ship Mode Dim
       level: Ship Mode
   - unique_name: web_sales_Customer_Dimension_1
     from:
@@ -92,7 +92,7 @@ relationships:
       join_columns:
         - WS_BILL_CUSTOMER_SK
     to:
-      dimension: Customer Dimension
+      dimension: Customer Dim
       level: Customer Number
   - unique_name: web_sales_Promotions
     from:
@@ -108,7 +108,7 @@ relationships:
       join_columns:
         - WS_BILL_CDEMO_SK
     to:
-      dimension: Customer Demographics
+      dimension: Customer Demographics Dim
       level: Customer Demographics
   - unique_name: web_sales_Product_Dimension
     from:
@@ -116,7 +116,7 @@ relationships:
       join_columns:
         - WS_ITEM_SK
     to:
-      dimension: Product Dimension
+      dimension: Product Dim
       level: Product Dimension
   - unique_name: web_sales_Fulfilling_Warehouse
     from:
@@ -124,7 +124,7 @@ relationships:
       join_columns:
         - WS_WAREHOUSE_SK
     to:
-      dimension: Fulfilling Warehouse
+      dimension: Fulfilling Warehouse Dim
       level: Fulfilling Warehouse
   - unique_name: store_sales_Customer_Dimension
     from:
@@ -132,7 +132,7 @@ relationships:
       join_columns:
         - SS_CUSTOMER_SK
     to:
-      dimension: Customer Dimension
+      dimension: Customer Dim
       level: Customer ID Masked
   - unique_name: store_sales_Customer_Dimension_1
     from:
@@ -140,7 +140,7 @@ relationships:
       join_columns:
         - SS_CUSTOMER_SK
     to:
-      dimension: Customer Dimension
+      dimension: Customer Dim
       level: Customer Number
   - unique_name: store_sales_Promotions
     from:
@@ -156,7 +156,7 @@ relationships:
       join_columns:
         - SS_STORE_SK
     to:
-      dimension: Store Dimension
+      dimension: Store Dim
       level: Store Dimension
   - unique_name: store_sales_Customer_Demographics
     from:
@@ -164,7 +164,7 @@ relationships:
       join_columns:
         - SS_CDEMO_SK
     to:
-      dimension: Customer Demographics
+      dimension: Customer Demographics Dim
       level: Customer Demographics
   - unique_name: store_sales_Product_Dimension
     from:
@@ -172,7 +172,7 @@ relationships:
       join_columns:
         - SS_ITEM_SK
     to:
-      dimension: Product Dimension
+      dimension: Product Dim
       level: Product Dimension
   - unique_name: web_sales_WS_SOLD_DATE_SK_to_Date Dimension_Calendar Date
     from:
@@ -181,7 +181,7 @@ relationships:
         - WS_SOLD_DATE_SK
     role_play: Sold {0}
     to:
-      dimension: Date Dimension
+      dimension: Date Dim
       level: Calendar Date
   - unique_name: web_sales_WS_SHIP_DATE_SK_to_Date Dimension_Calendar Date
     from:
@@ -190,7 +190,7 @@ relationships:
         - WS_SHIP_DATE_SK
     role_play: Ship {0}
     to:
-      dimension: Date Dimension
+      dimension: Date Dim
       level: Calendar Date
   - unique_name: store_sales_SS_SOLD_DATE_SK_to_Date Dimension_Calendar Date
     from:
@@ -199,5 +199,5 @@ relationships:
         - SS_SOLD_DATE_SK
     role_play: Sold {0}
     to:
-      dimension: Date Dimension
+      dimension: Date Dim
       level: Calendar Date

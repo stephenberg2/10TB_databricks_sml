@@ -1,6 +1,6 @@
-unique_name: Fulfilling Warehouse
+unique_name: Fulfilling Warehouse Dim
 object_type: dimension
-label: Fulfilling Warehouse
+label: Fulfilling Warehouse Dim
 hierarchies:
   - unique_name: Fulfilling Warehouse
     label: Warehouse

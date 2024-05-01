@@ -1,6 +1,6 @@
-unique_name: Ship Mode
+unique_name: Ship Mode Dim
 object_type: dimension
-label: Ship Mode
+label: Ship Mode Dim
 hierarchies:
   - unique_name: Ship Mode
     label: Ship Mode

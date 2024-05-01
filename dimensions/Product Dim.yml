@@ -1,6 +1,6 @@
-unique_name: Product Dimension
+unique_name: Product Dim
 object_type: dimension
-label: Product Dimension
+label: Product Dim
 hierarchies:
   - unique_name: Product Dimension
     label: Product Dimension

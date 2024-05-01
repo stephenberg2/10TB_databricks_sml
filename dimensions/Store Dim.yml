@@ -1,6 +1,6 @@
-unique_name: Store Dimension
+unique_name: Store Dim
 object_type: dimension
-label: Store Dimension
+label: Store Dim
 hierarchies:
   - unique_name: Store Dimension
     label: Store Dimension

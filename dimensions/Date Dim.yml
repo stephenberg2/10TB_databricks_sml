@@ -1,6 +1,6 @@
-unique_name: Date Dimension
+unique_name: Date Dim
 object_type: dimension
-label: Date Dimension
+label: Date Dim
 hierarchies:
   - unique_name: Date Dimension
     label: Date Month Hierarchy
