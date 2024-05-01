@@ -1,49 +1,6 @@
 unique_name: 10TB - DB SQL
 object_type: model
 label: 10TB - DB SQL
-aggregates:
-  - unique_name: Store Sales
-    label: Store Sales
-    attributes:
-      - name: Product Brand
-        dimension: Product Dimension
-      - name: I Category
-        dimension: Product Dimension
-      - name: Customer Country
-        dimension: Customer Dimension
-      - name: Product Class
-        dimension: Product Dimension
-    metrics:
-      - Store Net Paid Incl Tax
-      - Store Quantity Sold
-      - Purchased Amount In Store
-      - Store Net Paid Amount
-      - Average Store Sales List Price
-      - Store Net Profit
-      - Store Sales Price
-      - Average Store Sales Sales Price
-    target_connection: db sql
-  - unique_name: Web Sales
-    label: Web Sales
-    attributes:
-      - name: Product Brand
-        dimension: Product Dimension
-      - name: I Category
-        dimension: Product Dimension
-      - name: Customer Country
-        dimension: Customer Dimension
-      - name: Product Class
-        dimension: Product Dimension
-    metrics:
-      - Web Quantity Sold
-      - Web Sales Row Counter
-      - Web Net Profit
-      - Purchased Amount On Web
-      - Web Ext Discount Amount
-      - Web Net Paid Incl Tax
-      - Web Net Paid Incl Ship
-      - Web Net Paid Incl Tax and Ship
-    target_connection: db sql
 include_default_drillthrough: true
 metrics:
   - unique_name: Average Store Sales List Price
@@ -112,21 +69,6 @@ metrics:
     folder: Total Sales Measures
   - unique_name: Total Quantity Sold
     folder: Total Sales Measures
-perspectives:
-  - unique_name: No PII
-    dimensions:
-      - name: Customer Demographics
-        hierarchies:
-          - name: Customer Demographics
-            visible: false
-      - name: Customer Dimension
-        hierarchies:
-          - name: Customer Dimension
-            levels:
-              - Customer Number
-            visible: false
-        secondaryattributes:
-          - Customer Email
 relationships:
   - unique_name: web_sales_Customer_Dimension
     from:
