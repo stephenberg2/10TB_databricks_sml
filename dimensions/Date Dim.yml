@@ -2,7 +2,7 @@ unique_name: Date Dim
 object_type: dimension
 label: Date Dim
 hierarchies:
-  - unique_name: Date Dimension
+  - unique_name: Date Month Hierarchy
     label: Date Month Hierarchy
     filter_empty: 'yes'
     folder: Date Attributes

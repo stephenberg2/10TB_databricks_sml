@@ -2,8 +2,8 @@ unique_name: Store Dim
 object_type: dimension
 label: Store Dim
 hierarchies:
-  - unique_name: Store Dimension
-    label: Store Dimension
+  - unique_name: Store Hierarchy
+    label: Store Hierarchy
     filter_empty: 'yes'
     folder: Store Attributes
     levels:

@@ -2,8 +2,8 @@ unique_name: Fulfilling Warehouse Dim
 object_type: dimension
 label: Fulfilling Warehouse Dim
 hierarchies:
-  - unique_name: Fulfilling Warehouse
-    label: Warehouse
+  - unique_name: Warehouse Hierarchy
+    label: Warehouse Hierarchy
     filter_empty: 'yes'
     folder: Fulfillment
     levels:

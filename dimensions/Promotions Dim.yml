@@ -2,8 +2,8 @@ unique_name: Promotions Dim
 object_type: dimension
 label: Promotions Dim
 hierarchies:
-  - unique_name: Promotions
-    label: Promotions
+  - unique_name: Promotions Hierarchy
+    label: Promotions Hierarchy
     filter_empty: 'yes'
     folder: Promotion Attributes
     levels:

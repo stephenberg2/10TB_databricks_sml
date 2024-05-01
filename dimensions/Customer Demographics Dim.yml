@@ -2,8 +2,8 @@ unique_name: Customer Demographics Dim
 object_type: dimension
 label: Customer Demographics Dim
 hierarchies:
-  - unique_name: Customer Demographics
-    label: Customer Demographics
+  - unique_name: Customer Demographics Hierarchy
+    label: Customer Demographics Hierarchy
     filter_empty: 'yes'
     folder: Customer Information
     levels:
