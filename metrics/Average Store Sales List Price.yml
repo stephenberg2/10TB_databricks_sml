@@ -4,3 +4,4 @@ label: Average Store Sales List Price
 calculation_method: average
 column: SS_LIST_PRICE
 dataset: store_sales
+format: $#,##0.00
