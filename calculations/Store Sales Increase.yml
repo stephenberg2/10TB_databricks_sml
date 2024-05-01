@@ -2,9 +2,9 @@ unique_name: Store Sales Increase
 object_type: metric_calc
 label: Store Sales Increase
 expression: >
-  ([Sold Date Dimension].[Sold Date Dimension].CurrentMember
+  ([Sold Date Dim].[Sold Date Month Hierarchy].CurrentMember
   , [Measures].[Store Sales Price]) 
   / 
-  ([Sold Date Dimension].[Sold Date Dimension].CurrentMember.PrevMember
+  ([Sold Date Dim].[Sold Date Month Hierarchy].CurrentMember.PrevMember
   , [Measures].[Store Sales Price])
 is_hidden: false
