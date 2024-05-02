@@ -58,6 +58,7 @@ level_attributes:
     dataset: item
     key_columns:
       - I_CLASS_ID
+      - I_CATEGORY_ID
     name_column: I_CLASS
   - unique_name: Product Dimension
     label: Product Item
