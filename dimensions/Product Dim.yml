@@ -39,6 +39,7 @@ level_attributes:
     key_columns:
       - I_CATEGORY_ID
     name_column: I_CATEGORY
+    sort_column: empty_value
   - unique_name: Product Brand
     label: Product Brand
     allowed_calcs_for_dma:
@@ -48,6 +49,8 @@ level_attributes:
     dataset: item
     key_columns:
       - I_BRAND_ID
+      - I_CLASS_ID
+      - I_CATEGORY_ID
     name_column: I_BRAND
   - unique_name: Product Class
     label: Product Class
@@ -71,4 +74,5 @@ level_attributes:
     key_columns:
       - I_ITEM_SK
     name_column: I_PRODUCT_NAME
+    sort_column: empty_value
 type: standard
