@@ -8,13 +8,9 @@ hierarchies:
     folder: Date Attributes
     levels:
       - unique_name: Calendar Year
-        time_unit: year
       - unique_name: Calendar Quarter
-        time_unit: quarter
       - unique_name: Calendar Month
-        time_unit: month
       - unique_name: Calendar Date
-        time_unit: day
 level_attributes:
   - unique_name: Calendar Quarter
     label: Calendar Quarter
@@ -31,7 +27,7 @@ level_attributes:
     key_columns:
       - D_QUARTER_NAME
     name_column: D_QUARTER_NAME
-    sort_column: empty_value
+    time_unit: quarter
   - unique_name: Calendar Year
     label: Calendar Year
     allowed_calcs_for_dma:
@@ -47,6 +43,7 @@ level_attributes:
       - D_YEAR
     name_column: D_YEAR
     sort_column: D_YEAR
+    time_unit: year
   - unique_name: Calendar Month
     label: Calendar Month
     allowed_calcs_for_dma:
@@ -64,6 +61,7 @@ level_attributes:
       - D_QOY
       - D_YEAR
     name_column: D_MOY
+    time_unit: month
   - unique_name: Calendar Date
     label: Calendar Date
     allowed_calcs_for_dma:
@@ -80,7 +78,7 @@ level_attributes:
     key_columns:
       - D_DATE_SK
     name_column: d_datestring
-    sort_column: empty_value
+    time_unit: day
 modeler_metadata:
   modified: 'false'
   version: 0
